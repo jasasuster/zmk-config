@@ -17,6 +17,11 @@
     // chain-length = <29>; // Uncomment if using only per-key LEDs.
 };
 
+// Enable nice!view
+&nice_view_spi {
+  cs-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+};
+
 / {
     keymap {
         compatible = "zmk,keymap";
