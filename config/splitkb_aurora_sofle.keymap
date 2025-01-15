@@ -102,15 +102,22 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            // ------------------------------------------------------------------------------------------------------------
-            // |  ESC  |  1  |  2  |  3   |  4   |  5   |                   |  6   |  7    |  8    |  9   |   0   |   `   |
-            // |  TAB  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   |   -   |
-            // |  CTRL |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-            // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | PSCRN |  N   |  M    |  ,    |  .   |   /   | SHIFT |
-            //               |CTRL | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   | RALT |
-            //
-            // Encoder Left:    VOL DOWN <-> VOL UP
-            // Encoder Right: SROLL DOWN <-> SROLL UP
+            /*
+            *   ,-----------------------------------------.                 ,-----------------------------------------.
+            *   | ESC  |   1  |   2  |   3  |   4  |   5  |                 |  6   |  7   |  8   |  9   |  0   |  `  |
+            *   +------+------+------+------+------|------.                 .------+------+------+------+------+------.
+            *   | TAB  |   Q  |   W  |   E  |   R  |   T  |                 |  Y   |  U   |  I   |  O   |  P   |  -   |
+            *   +------+------+------+------+------|------+                 .------+------+------+------+------+------.
+            *   | CTRL |   A  |   S  |   D  |   F  |   G  |                 |  H   |  J   |  K   |  L   |  ;   |  '   |
+            *   +------+------+------+------+------+------+------.   .------+------+------+------+------+------+------.
+            *   |SHIFT |   Z  |   X  |   C  |   V  |   B  | MUTE |   | PSCRN|  N   |  M   |  ,   |  .   |  /   | SHIFT|
+            *   `------+------+------+------+------+------+------+   +------+------+------+------+------+------+------'
+            *                 | CTRL | ALT  | GUI  | LOWER| SPACE|   | ENTER| RAISE| BSPC | GUI  | RALT |
+            *                 `------+------+------+------+------'   '------+------+------+------+------'
+            *
+            *   Encoder Left:    VOL DOWN <-> VOL UP
+            *   Encoder Right:  PAGE DOWN <-> PAGE UP
+            */
 
             bindings = <
 &kp ESC    &kp N1  &kp N2     &kp N3    &kp N4    &kp N5                           &kp N6  &kp N7    &kp N8     &kp N9    &kp N0    &kp GRAVE
@@ -126,9 +133,26 @@
         };
 
         lower_layer {
+            /*
+            *   ,-----------------------------------------.                 ,-----------------------------------------.
+            *   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |                 |  F7  |  F8  |  F9  | F10  | F11  | F12  |
+            *   +------+------+------+------+------|------.                 .------+------+------+------+------+------.
+            *   | CAPS |      |      |      |      |      |                 |      | BSPC |  UP  | DEL  |      |      |
+            *   +------+------+------+------+------|------+                 .------+------+------+------+------+------.
+            *   | SHIFT|      |      |      |      |      |                 | PSCRN| LEFT | DOWN |RIGHT |      |      |
+            *   +------+------+------+------+------+------+------.   .------+------+------+------+------+------+------.
+            *   | CTRL |      |      |      |      |      | MUTE |   |      |      |      |      |      |      |      |
+            *   `------+------+------+------+------+------+------+   +------+------+------+------+------+------+------'
+            *                 | CTRL | ALT  | GUI  |      | SPACE|   |ENTER |      | BSPC  | GUI  | RALT |
+            *                 `------+------+------+------+------'   '------+------+------+------+------'
+            *
+            *   Encoder Left:    VOL DOWN <-> VOL UP
+            *   Encoder Right:  PAGE DOWN <-> PAGE UP
+            */
+
             bindings = <
 &kp F1     &kp F2  &kp F3     &kp F4    &kp F5    &kp F6                           &kp F7           &kp F8          &kp F9          &kp F10          &kp F11  &kp F12
-&kp CAPS   &trans  &trans     &trans    &trans    &trans                           &trans           &kp BACKSPACE   &kp UP_ARROW    &kp DEL          &trans   &trans
+&kp CAPS   &trans  &trans     &trans    &trans    &trans                           &trans           &kp BSPC        &kp UP_ARROW    &kp DEL          &trans   &trans
 &kp LSHFT  &trans  &trans     &trans    &trans    &trans                           &kp PRINTSCREEN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans   &trans
 &kp LCTRL  &trans  &trans     &trans    &trans    &trans  &kp C_MUTE    &trans     &trans           &trans          &trans          &trans           &trans   &kp RCTRL
                    &kp LCTRL  &kp LALT  &kp LGUI  &trans  &kp SPACE     &kp ENTER  &trans           &kp BSPC        &kp RGUI        &kp RALT
@@ -140,6 +164,23 @@
         };
 
         raise_layer {
+            /*
+            *   ,-----------------------------------------.                 ,-----------------------------------------.
+            *   |      |      |      |      |      |      |                 |      |      |      |      |      |      |
+            *   +------+------+------+------+------|------.                 .------+------+------+------+------+------.
+            *   |      |      |      | PGUP |      |      |                 |  *   |  |   |   (  |   )  |  !   |  _   |
+            *   +------+------+------+------+------|------+                 .------+------+------+------+------+------.
+            *   |      |      | HOME | PGDN | END  |      |                 |  =   |  <   |   [  |   ]  |   >  |  ~   |
+            *   +------+------+------+------+------+------+------.   .------+------+------+------+------+------+------.
+            *   |      |      |      |      |      |      |      |   |      |  %   |  &   |   {  |   }  |   +  |  -   |
+            *   `------+------+------+------+------+------+------+   +------+------+------+------+------+------+------'
+            *                 |      |      |      |      |      |   |      |      |      |      |      |
+            *                 `------+------+------+------+------'   '------+------+------+------+------'
+            *
+            *   Encoder Left:    VOL DOWN <-> VOL UP
+            *   Encoder Right:  PAGE DOWN <-> PAGE UP
+            */
+
             bindings = <
 &trans  &trans  &trans    &trans         &trans   &trans                        &trans     &trans    &trans                &trans                 &trans    &trans
 &trans  &trans  &trans    &kp PAGE_UP    &trans   &trans                        &kp STAR   &kp PIPE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EXCL  &kp UNDER
@@ -152,6 +193,23 @@
         };
 
         adjust {
+            /*
+            *   ,-----------------------------------------.                 ,-----------------------------------------.
+            *   |      |      |      |      |      |      |                 |      |      |      |      |      |      |
+            *   +------+------+------+------+------|------.                 .------+------+------+------+------+------.
+            *   |      | BT0  | BT1  | BT2  | BT3  | BT4  |                 |      | OFF  | ON   | TOG  |      |      |
+            *   +------+------+------+------+------|------+                 .------+------+------+------+------+------.
+            *   |      |      | EXT1 | EXT2 | EXT3 |      |                 |      | BRI+ | BRI- | EFF+ | EFF- |      |
+            *   +------+------+------+------+------+------+------.   .------+------+------+------+------+------+------.
+            *   |      |      |      |      |      |      |      |   |      |      |      |      |      |      |      |
+            *   `------+------+------+------+------+------+------+   +------+------+------+------+------+------+------'
+            *                 |      |      |      |      |      |   |      |      |      |      |      |
+            *                 `------+------+------+------+------'   '------+------+------+------+------'
+            *
+            *   Encoder Left:    VOL DOWN <-> VOL UP
+            *   Encoder Right:  PAGE DOWN <-> PAGE UP
+            */
+
             bindings = <
 &trans  &trans        &trans             &trans            &trans             &trans                          &trans  &trans           &trans           &trans           &trans           &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3       &bt BT_SEL 4                    &trans  &rgb_ug RGB_OFF  &rgb_ug RGB_ON   &rgb_ug RGB_TOG  &trans           &trans
