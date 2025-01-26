@@ -113,7 +113,7 @@
             *   +------+------+------+------+------+------+------.   .------+------+------+------+------+------+------.
             *   | CTRL |   Y  |   X  |   C  |   V  |   B  | MUTE |   | PSCRN|  N   |  M   |  ,   |  .   |  /   | SHIFT|
             *   `------+------+------+------+------+------+------+   +------+------+------+------+------+------+------'
-            *                 | CTRL | ALT  | GUI  | LOWER| SPACE|   | Q    | RAISE| BSPC | GUI  | RALT |
+            *                 | CTRL | ALT  | GUI  | LOWER| SPACE|   | ENTER| RAISE| BSPC | GUI  | RALT |
             *                 `------+------+------+------+------'   '------+------+------+------+------'
             *
             *   Encoder Left:    VOL DOWN <-> VOL UP
@@ -125,7 +125,7 @@
 &kp TAB    &kp SI_Q   &kp SI_W   &kp SI_E     &kp SI_R     &kp SI_T                            &kp SI_Z   &kp SI_U     &kp SI_I      &kp SI_O     &kp SI_P     &kp SI_MINUS
 &kp LSHFT  &kp SI_A   &kp SI_S   &kp SI_D     &kp SI_F     &kp SI_G                            &kp SI_H   &kp SI_J     &kp SI_K      &kp SI_L     &kp SI_SEMI  &kp SI_SQT
 &kp LCTRL  &kp SI_Y   &kp SI_X   &kp SI_C     &kp SI_V     &kp SI_B   &kp C_MUTE    &kp PSCRN  &kp SI_N   &kp SI_M     &kp SI_COMMA  &kp SI_DOT   &kp SI_FSLH  &kp RSHFT
-                      &kp LCTRL  &kp LALT     &kp LGUI     &mo 1      &kp SPACE     &kp SI_Q   &mo 2      &kp BSPC     &kp RGUI      &kp RALT
+                      &kp LCTRL  &kp LALT     &kp LGUI     &mo 1      &kp SPACE     &kp RET    &mo 2      &kp BSPC     &kp RGUI      &kp RALT
             >;
 
             sensor-bindings = 
