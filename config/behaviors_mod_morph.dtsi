@@ -156,7 +156,7 @@ si_bslh: si-bslh-pipe {
 };
 
 // - _
-si_minus {
+si_minus: si-minus-under {
   compatible = "zmk,behavior-mod-morph";
   label = "SI_MINUS_UNDER";
   #binding-cells = <0>;
@@ -165,7 +165,7 @@ si_minus {
 };
 
 // ' "
-si_sqt {
+si_sqt: si-sqt-dqt {
   compatible = "zmk,behavior-mod-morph";
   label = "SI_SQT_DQT";
   #binding-cells = <0>;
