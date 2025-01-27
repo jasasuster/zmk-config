@@ -163,12 +163,3 @@ si_minus: si-minus-under {
   bindings = <&kp SI_MINUS>, <&kp SI_UNDER>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
 };
-
-// ' "
-si_sqt: si-sqt-dqt {
-  compatible = "zmk,behavior-mod-morph";
-  label = "SI_SQT_DQT";
-  #binding-cells = <0>;
-  bindings = <&kp SI_SQT>, <&kp SI_DQT>;
-  mods = <(MOD_LSFT|MOD_RSFT)>;
-};
