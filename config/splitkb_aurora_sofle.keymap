@@ -57,9 +57,9 @@
         macro_parens: parens {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kt LPAR &kp RPAR &kp LEFT>;
+            bindings = <&macro_tap>, <&kt SI_LPAR &kp SI_RPAR &kp LEFT>;
 
-            label = "PARENS";
+            label = "MACRO_PARENS";
             wait-ms = <10>;
             tap-ms = <30>;
         };
@@ -69,9 +69,9 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&kp DOUBLE_QUOTES &kp DOUBLE_QUOTES &kp LEFT>;
+                <&kp SI_DQT &kp SI_DQT &kp LEFT>;
 
-            label = "QUOTES";
+            label = "MACRO_QUOTES";
             wait-ms = <10>;
             tap-ms = <30>;
         };
@@ -81,7 +81,7 @@
             #binding-cells = <0>;
             bindings =
                 <&macro_tap>,
-                <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>;
+                <&kp SI_LBKT &kp SI_RBKT &kp LEFT>;
 
             label = "MACRO_BRACKET";
             wait-ms = <10>;
@@ -91,7 +91,7 @@
         macro_brace: macro_brace {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>;
+            bindings = <&macro_tap>, <&kp SI_LBRC &kp SI_RBRC &kp LEFT>;
 
             label = "MACRO_BRACE";
             wait-ms = <10>;
@@ -193,7 +193,7 @@
 
             bindings = <
 &trans &trans       &trans      &trans         &trans   &trans                        &trans        &trans       &trans       &trans       &trans       &trans
-&none  &kp SI_SCAR  &&kp SI_AT  &kp PAGE_UP    &none    &none                         &kp SI_ASTRK  &kp SI_PIPE  &kp SI_LPAR  &kp SI_RPAR  &kp SI_EXCL  &kp SI_UNDER
+&none  &kp SI_SCAR  &kp SI_AT   &kp PAGE_UP    &none    &none                         &kp SI_ASTRK  &kp SI_PIPE  &kp SI_LPAR  &kp SI_RPAR  &kp SI_EXCL  &kp SI_UNDER
 &trans &kp SI_CCAR  &kp HOME    &kp PAGE_DOWN  &kp END  &none                         &kp SI_EQUAL  &kp SI_LT    &kp SI_LBKT  &kp SI_RBKT  &kp SI_GT    &kp SI_TILDE
 &none  &kp SI_ZCAR  &none       &none          &none    &none   &kp C_MUTE    &none   &kp SI_PRCNT  &kp SI_AMPS  &kp SI_LBRC  &kp SI_RBRC  &kp SI_PLUS  &kp SI_MINUS
                     &trans      &trans         &trans   &none   &trans        &trans  &none         &trans       &trans       &trans
