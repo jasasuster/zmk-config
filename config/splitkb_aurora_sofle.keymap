@@ -97,6 +97,7 @@
             wait-ms = <10>;
             tap-ms = <30>;
         };
+    };
 
     behaviors {
         #include "behaviors_mod_morph.dtsi"
@@ -107,9 +108,7 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LSHFT>, <&kp CAPS>;
-        }
-    }
-
+        };
     };
 
     keymap {
