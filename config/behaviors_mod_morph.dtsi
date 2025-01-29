@@ -3,6 +3,7 @@
 // credits to https://github.com/bzgec/zmk-config/blob/master/config/keys_si.h
 
 #include "helper.h"
+#include "keys_si.h"
 
 // ; :
 ZMK_MOD_MORPH(si_semi,
