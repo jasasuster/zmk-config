@@ -1,6 +1,6 @@
 // Behaviors to support US like symbols when host layoust is SI
 
-// // credits to https://github.com/bzgec/zmk-config/blob/master/config/keys_si.h
+// credits to https://github.com/bzgec/zmk-config/blob/master/config/keys_si.h
 
 // ; :
 si_semi: si-semicolon-colon {
