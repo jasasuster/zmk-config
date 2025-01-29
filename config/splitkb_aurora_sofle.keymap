@@ -10,9 +10,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
+
+#include "helper.h"
+#include "helpers.dtsi"
+#include "behaviors_mod_morph.dtsi"
 #include "keys_si.h"
 
-// Uncomment this block if using RGB
+// RGB
 
 &led_strip {
     chain-length = <35>; // per-key + underglow LEDs
@@ -23,6 +27,8 @@
 &nice_view_spi {
     cs-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>; // account for using a botched wire from P1.01 for CS on nice!view
 };
+
+// Encoders
 
 &sensors {
     left_config {
@@ -35,92 +41,6 @@
 };
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        adjust_layer {
-            bindings = <&mo 3>;
-            key-positions = <53 56>;
-            layers = <0>;
-        };
-
-        macro_params_use {
-            bindings = <&macro_parens>;
-            key-positions = <20 21>;
-            layers = <2>;
-        };
-
-        macro_brackets_use {
-            bindings = <&macro_bracket>;
-            key-positions = <32 33>;
-            layers = <2>;
-        };
-
-        macro_brace_use {
-            bindings = <&macro_brace>;
-            key-positions = <46 47>;
-            layers = <2>;
-        };
-    };
-
-    macros {
-        macro_parens: parens {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kt SI_LPAR &kp SI_RPAR &kp LEFT>;
-
-            label = "MACRO_PARENS";
-            wait-ms = <10>;
-            tap-ms = <30>;
-        };
-
-        macro_quotes: quotes {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&kp SI_DQT &kp SI_DQT &kp LEFT>;
-
-            label = "MACRO_QUOTES";
-            wait-ms = <10>;
-            tap-ms = <30>;
-        };
-
-        macro_bracket: macro_bracket {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_tap>,
-                <&kp SI_LBKT &kp SI_RBKT &kp LEFT>;
-
-            label = "MACRO_BRACKET";
-            wait-ms = <10>;
-            tap-ms = <30>;
-        };
-
-        macro_brace: macro_brace {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp SI_LBRC &kp SI_RBRC &kp LEFT>;
-
-            label = "MACRO_BRACE";
-            wait-ms = <10>;
-            tap-ms = <30>;
-        };
-    };
-
-    behaviors {
-        #include "behaviors_mod_morph.dtsi"
-        
-        shft_caps: tap_dance_shift_caps_lock_toggle {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_SHIFT_CAPS_LOCK_TOGGLE";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LSHFT>, <&kp CAPS>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -182,7 +102,7 @@
             >;
 
             sensor-bindings =
-                <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>,
+                <&inc_dec_kp C_VOL_UP C_VOL_DN>,
                 <&inc_dec_kp PAGE_DOWN PAGE_UP>;
         };
 
@@ -210,10 +130,10 @@
             >;
         };
 
-        adjust {
+        adjust_layer {
             /*
             *   ,-----------------------------------------.                 ,-----------------------------------------.
-            *   |      |      |      |      |      |      |                 |      |      |      |      |      |      |
+            *   |      |      |      |      |      |      |                 |      |      |      |      |      | SLEEP|
             *   +------+------+------+------+------|------.                 .------+------+------+------+------+------.
             *   |      | BT0  | BT1  | BT2  | BT3  | BT4  |                 |      | OFF  | ON   | TOG  |      |      |
             *   +------+------+------+------+------|------+                 .------+------+------+------+------+------.
@@ -226,7 +146,7 @@
             */
 
             bindings = <
-&none  &none         &none              &none             &none              &none                         &none  &none           &none           &none           &none           &none
+&none  &none         &none              &none             &none              &none                         &none  &none           &none           &none           &none           &win_sleep
 &none  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2      &bt BT_SEL 3       &bt BT_SEL 4                  &none  &rgb_ug RGB_OFF &rgb_ug RGB_ON  &rgb_ug RGB_TOG &none           &none
 &none  &none         &ext_power EP_TOG  &ext_power EP_ON  &ext_power EP_OFF  &none                         &none  &rgb_ug RGB_BRI &rgb_ug RGB_BRD &rgb_ug RGB_EFF &rgb_ug RGB_EFR &none
 &none  &none         &none              &none             &none              &none        &none    &none   &none  &none           &none           &none           &none           &none
