@@ -1,30 +1,30 @@
-#include "helper.h"
-
-// Macros
+/*
+ * Macros
+ */
 
 ZMK_MACRO(parens,
-    wait-ms = <10>;
-    tap-ms = <5>;
-    bindings = <&macro_tap &kp SI_LPAR &kp SI_RPAR &kp LEFT>;
-);
+  wait-ms = <10>;
+  tap-ms = <5>;
+  bindings = <&macro_tap &kp SI_LPAR &kp SI_RPAR &kp LEFT>;
+)
 
 ZMK_MACRO(quotes,
-    wait-ms = <10>;
-    tap-ms = <5>;
-    bindings = <&macro_tap &kp SI_DQT &kp SI_DQT &kp LEFT>;
-);
+  wait-ms = <10>;
+  tap-ms = <5>;
+  bindings = <&macro_tap &kp SI_DQT &kp SI_DQT &kp LEFT>;
+)
 
 ZMK_MACRO(brackets,
-    wait-ms = <10>;
-    tap-ms = <5>;
-    bindings = <&macro_tap &kp SI_LBKT &kp SI_RBKT &kp LEFT>;
-);
+  wait-ms = <10>;
+  tap-ms = <5>;
+  bindings = <&macro_tap &kp SI_LBKT &kp SI_RBKT &kp LEFT>;
+)
 
 ZMK_MACRO(braces,
     wait-ms = <10>;
     tap-ms = <5>;
     bindings = <&macro_tap &kp SI_LBRC &kp SI_RBRC &kp LEFT>;
-);
+)
 
 ZMK_MACRO(win_sleep,
     wait-ms = <100>;
@@ -32,41 +32,45 @@ ZMK_MACRO(win_sleep,
     bindings = <&kp LG(X) &kp U &kp S>;
 )
 
-// Tap dances
+/*
+ * Tap dances
+ */
 
 // tap: shift | double-tap: caps lock
 ZMK_TAP_DANCE(shft_caps,
     tapping-term-ms = <200>;
     bindings = <&kp LSHFT>, <&kp CAPS>;
-);
+)
 
 // tap: '(' | double-tap: '()'
 ZMK_TAP_DANCE(td_parens,
     tapping-term-ms = <200>;
     bindings = <&kp SI_LPAR>, <&parens>;
-);
+)
 
 // tap: ' | double tap: ''
 ZMK_TAP_DANCE(td_quotes,
     tapping-term-ms = <200>;
     bindings = <&kp SI_DQT>, <&quotes>;
-);
+)
 
 // tap: '[' | double-tap: '[]'
 ZMK_TAP_DANCE(td_brackets,
     tapping-term-ms = <200>;
     bindings = <&kp SI_LBKT>, <&brackets>;
-);
+)
 
 // tap: '{' | double-tap: '{}'
 ZMK_TAP_DANCE(td_braces,
     tapping-term-ms = <200>;
     bindings = <&kp SI_LBRC>, <&braces>;
-);
+)
 
-// Combos
+/*
+ * Combos
+ */
 
-ZMK_COMBO(adjust_layer, &mo 3, 53 56, 0);
-ZMK_COMBO(parens, &parens, 20 21, 2);
-ZMK_COMBO(brackets, &brackets, 32 33, 2);
-ZMK_COMBO(braces, &braces, 46 47, 2);
+ZMK_COMBO(adjust_layer, &mo 3, 53 56, 0)
+ZMK_COMBO(parens, &parens, 20 21, 2)
+ZMK_COMBO(brackets, &brackets, 32 33, 2)
+ZMK_COMBO(braces, &braces, 46 47, 2)

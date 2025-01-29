@@ -8,71 +8,71 @@
 ZMK_MOD_MORPH(si_semi,
   bindings = <&kp SI_SEMI>, <&kp SI_COLON>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // = +
 ZMK_MOD_MORPH(si_equal,
   bindings = <&kp SI_EQUAL>, <&kp SI_PLUS>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // ' "
 ZMK_MOD_MORPH(si_sqt,
   bindings = <&kp SI_SQT>, <&kp SI_DQT>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // , <
 ZMK_MOD_MORPH(si_comma,
   bindings = <&kp SI_COMMA>, <&kp SI_LT>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // . >
 ZMK_MOD_MORPH(si_dot,
   bindings = <&kp SI_DOT>, <&kp SI_GT>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 
 // / ?
 ZMK_MOD_MORPH(si_fslh,
   bindings = <&kp SI_FSLH>, <&kp SI_QMARK>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 
 // 2 @
 ZMK_MOD_MORPH(si_n2,
   bindings = <&kp SI_N2>, <&kp SI_AT>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 
 // 6 ^
 ZMK_MOD_MORPH(si_n6,
   bindings = <&kp SI_N6>, <&kp SI_CARET>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 
 // 7 &
 ZMK_MOD_MORPH(si_n7,
   bindings = <&kp SI_N7>, <&kp SI_AMPS>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // 8 *
 ZMK_MOD_MORPH(si_n8,
   bindings = <&kp SI_N8>, <&kp SI_ASTRK>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // 9 (
 ZMK_MOD_MORPH(si_n9,
   bindings = <&kp SI_N9>, <&kp SI_LPAR>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // 0 )
 ZMK_MOD_MORPH(si_n0,
@@ -84,34 +84,34 @@ ZMK_MOD_MORPH(si_n0,
 ZMK_MOD_MORPH(si_euro,
   bindings = <&kp SI_EURO>, <&kp SI_RNGA>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // [ {
 ZMK_MOD_MORPH(si_lbkt,
   bindings = <&kp SI_LBKT>, <&kp SI_LBRC>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // ] }
 ZMK_MOD_MORPH(si_rbkt,
   bindings = <&kp SI_RBKT>, <&kp SI_RBRC>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // ` ~
 ZMK_MOD_MORPH(si_grave,
   bindings = <&kp SI_GRAVE>, <&kp SI_TILDE>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // \ |
 ZMK_MOD_MORPH(si_bslh,
   bindings = <&kp SI_BSLH>, <&kp SI_PIPE>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // - _
 ZMK_MOD_MORPH(si_minus,
   bindings = <&kp SI_MINUS>, <&kp SI_UNDER>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
