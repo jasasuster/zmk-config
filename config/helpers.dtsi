@@ -40,31 +40,31 @@ ZMK_MACRO(win_sleep,
 
 // tap: shift | double-tap: caps lock
 ZMK_TAP_DANCE(shft_caps,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <400>;
     bindings = <&kp LSHFT>, <&kp CAPS>;
 )
 
 // tap: '(' | double-tap: '()'
 ZMK_TAP_DANCE(td_parens,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <400>;
     bindings = <&kp SI_LPAR>, <&parens>;
 )
 
 // tap: ' | double tap: ''
 ZMK_TAP_DANCE(td_quotes,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <400>;
     bindings = <&kp SI_DQT>, <&quotes>;
 )
 
 // tap: '[' | double-tap: '[]'
 ZMK_TAP_DANCE(td_brackets,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <400>;
     bindings = <&kp SI_LBKT>, <&brackets>;
 )
 
 // tap: '{' | double-tap: '{}'
 ZMK_TAP_DANCE(td_braces,
-    tapping-term-ms = <200>;
+    tapping-term-ms = <400>;
     bindings = <&kp SI_LBRC>, <&braces>;
 )
 
