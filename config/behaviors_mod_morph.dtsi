@@ -79,7 +79,7 @@ ZMK_MOD_MORPH(si_n9,
 ZMK_MOD_MORPH(si_n0,
   bindings = <&kp SI_N0>, <&kp SI_RPAR>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
-);
+)
 
 // € °
 ZMK_MOD_MORPH(si_euro,
