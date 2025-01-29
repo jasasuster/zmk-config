@@ -123,9 +123,9 @@
 
             bindings = <
 &trans &trans       &trans      &trans         &trans   &trans                        &trans        &trans       &trans       &trans       &trans       &trans
-&none  &kp SI_SCAR  &kp SI_AT   &kp PAGE_UP    &none    &none                         &kp SI_ASTRK  &kp SI_PIPE  &kp SI_LPAR  &kp SI_RPAR  &kp SI_EXCL  &kp SI_UNDER
-&trans &kp SI_CCAR  &kp HOME    &kp PAGE_DOWN  &kp END  &none                         &kp SI_EQUAL  &kp SI_LT    &kp SI_LBKT  &kp SI_RBKT  &kp SI_GT    &kp SI_TILDE
-&none  &kp SI_ZCAR  &none       &none          &none    &none   &kp C_MUTE    &none   &kp SI_PRCNT  &kp SI_AMPS  &kp SI_LBRC  &kp SI_RBRC  &kp SI_PLUS  &kp SI_MINUS
+&none  &kp SI_SCAR  &kp SI_AT   &kp PAGE_UP    &none    &none                         &kp SI_ASTRK  &kp SI_PIPE  &td_parens  &kp SI_RPAR  &kp SI_EXCL  &kp SI_UNDER
+&trans &kp SI_CCAR  &kp HOME    &kp PAGE_DOWN  &kp END  &none                         &kp SI_EQUAL  &kp SI_LT    &td_brackets  &kp SI_RBKT  &kp SI_GT    &kp SI_TILDE
+&none  &kp SI_ZCAR  &none       &none          &none    &none   &kp C_MUTE    &none   &kp SI_PRCNT  &kp SI_AMPS  &td_braces  &kp SI_RBRC  &kp SI_PLUS  &kp SI_MINUS
                     &trans      &trans         &trans   &none   &trans        &trans  &none         &trans       &trans       &trans
             >;
         };
