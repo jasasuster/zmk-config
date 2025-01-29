@@ -38,13 +38,6 @@
     };
 };
 
-// Combos
-
-ZMK_COMBO(adjust_layer, &mo 3, 53 56, 0);
-ZMK_COMBO(parens, &parens, 20 21, 2);
-ZMK_COMBO(brackets, &brackets, 32 33, 2);
-ZMK_COMBO(braces, &braces, 46 47, 2);
-
 // Macros
 
 ZMK_MACRO(parens,
@@ -108,6 +101,13 @@ ZMK_TAP_DANCE(td_braces,
     tapping-term-ms = <200>;
     bindings = <&kp SI_LBRC>, <&braces>;
 );
+
+// Combos
+
+ZMK_COMBO(adjust_layer, &mo 3, 53 56, 0);
+ZMK_COMBO(parens, &parens, 20 21, 2);
+ZMK_COMBO(brackets, &brackets, 32 33, 2);
+ZMK_COMBO(braces, &braces, 46 47, 2);
 
 / {
     behaviors {
