@@ -24,6 +24,16 @@
     cs-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>; // account for using a botched wire from P1.01 for CS on nice!view
 };
 
+&sensors {
+    left_config {
+        triggers-per-rotation = <36>;
+    };
+
+    right_config {
+        triggers-per-rotation = <30>;
+    };
+};
+
 / {
     combos {
         compatible = "zmk,combos";
