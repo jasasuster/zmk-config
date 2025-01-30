@@ -46,10 +46,10 @@
     triggers-per-rotation = <36>;
 };
 
-// If needed, adjust the value of ZMK_MOUSE_DEFAULT_SCRL_VAL, must be done before including mouse.h
+// If needed, adjust the value of ZMK_MOUSE_DEFAULT_SCRL_VAL, must be done before including pointing.h
 // ref: https://github.com/zmkfirmware/zmk/issues/72#issuecomment-2081690485
 // and: https://github.com/zmkfirmware/zmk/pull/2027#issuecomment-2130938216
-//#define ZMK_MOUSE_DEFAULT_SCRL_VAL 600 // default is 10
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 35 // default is 10
 
 // NOTE: Adding or removing mouse support requires updating the HID Descriptor.
 // You will need to re-pair to your devices.
@@ -66,7 +66,7 @@
         scroll_up_down: behavior_sensor_rotate_mouse_wheel_up_down {
             compatible = "zmk,behavior-sensor-rotate";
             #sensor-binding-cells = <0>;
-            tap-ms = <20>;
+            tap-ms = <30>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
         };
     };
@@ -153,7 +153,7 @@
             bindings = <
 &trans &trans       &trans      &trans         &trans   &trans                        &trans        &trans       &trans       &trans       &trans       &trans
 &none  &kp SI_SCAR  &kp SI_AT   &kp PAGE_UP    &none    &none                         &kp SI_ASTRK  &kp SI_PIPE  &kp SI_LPAR  &kp SI_RPAR  &kp SI_EXCL  &kp SI_UNDER
-&trans &kp SI_CCAR  &kp HOME    &kp PAGE_DOWN  &kp END  &none                         &kp SI_EQUAL  &kp SI_LT    &kp SI_LBKT  &kp SI_RBKT  &kp SI_GT    &kp SI_TILDE
+&trans &kp SI_CCAR  &kp HOME    &kp PAGE_DOWN  &kp END  &msc SCRL_DOWN                         &kp SI_EQUAL  &kp SI_LT    &kp SI_LBKT  &kp SI_RBKT  &kp SI_GT    &kp SI_TILDE
 &none  &kp SI_ZCAR  &none       &none          &none    &none   &kp C_MUTE    &none   &kp SI_PRCNT  &kp SI_AMPS  &kp SI_LBRC  &kp SI_RBRC  &kp SI_PLUS  &kp SI_MINUS
                     &trans      &trans         &trans   &none   &trans        &trans  &none         &trans       &trans       &trans
             >;
