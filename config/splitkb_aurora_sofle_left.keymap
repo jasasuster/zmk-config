@@ -16,6 +16,18 @@
 #include "behaviors_mod_morph.dtsi"
 #include "keys_si.h"
 
+// bodge wire 
+
+&kscan {
+    row-gpios
+    = <&gpio1 7 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+    , <&pro_micro 15 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+    , <&pro_micro 18 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+    , <&pro_micro 19 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+    , <&pro_micro 14 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>
+    ;
+};
+
 // RGB
 
 &led_strip {
