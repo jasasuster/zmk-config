@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - 'config/**'
+      - 'boards/**'
   workflow_dispatch:
 
 jobs:
