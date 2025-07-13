@@ -15,6 +15,7 @@
 #include "helpers.dtsi"
 #include "behaviors_mod_morph.dtsi"
 #include "keys_si.h"
+#include <boards/shields/splitkb_aurora_sofle_js/splitkb_aurora_sofle_left.overlay> // Include overlay
 
 // 
 
