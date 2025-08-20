@@ -153,7 +153,7 @@
             bindings = <
 &trans   &trans       &trans      &trans         &trans   &trans                        &trans        &trans       &trans       &trans       &trans       &trans
 &trans   &kp SI_SCAR  &kp SI_AT   &kp PAGE_UP    &none    &none                         &si_prcnt     &kp SI_PIPE  &kp SI_LPAR  &kp SI_RPAR  &kp SI_EXCL  &kp SI_UNDER
-&trans   &kp SI_CCAR  &kp HOME    &kp PAGE_DOWN  &kp END  &none                         &kp SI_EQUAL  &kp SI_LT    &kp SI_LBKT  &kp SI_RBKT  &Skp SI_GT   &si_tilde
+&trans   &kp SI_CCAR  &kp HOME    &kp PAGE_DOWN  &kp END  &none                         &kp SI_EQUAL  &kp SI_LT    &kp SI_LBKT  &kp SI_RBKT  &kp SI_GT    &si_tilde
 &trans   &kp SI_ZCAR  &none       &none          &none    &none   &kp C_MUTE    &none   &si_caret     &kp SI_AMPS  &kp SI_LBRC  &kp SI_RBRC  &si_plus     &si_dollar
                       &trans      &trans         &trans   &none   &trans        &trans  &none         &trans       &trans       &trans
             >;
