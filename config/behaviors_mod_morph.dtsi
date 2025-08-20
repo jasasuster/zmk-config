@@ -116,3 +116,33 @@ ZMK_MOD_MORPH(si_minus,
   bindings = <&kp SI_MINUS>, <&kp SI_UNDER>;
   mods = <(MOD_LSFT|MOD_RSFT)>;
 )
+
+// % and *
+ZMK_MOD_MORPH(si_prcnt,
+  bindings = <&kp SI_PRCNT>, <&kp SI_ASTRK>;
+  mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// ~ and #
+ZMK_MOD_MORPH(si_tilde,
+  bindings = <&kp SI_TILDE>, <&kp SI_HASH>;
+  mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// $ and €
+ZMK_MOD_MORPH(si_dollar,
+  bindings = <&kp SI_DLLR>, <&kp SI_EURO>;
+  mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// ^ and `
+ZMK_MOD_MORPH(si_caret,
+  bindings = <&kp SI_CARET>, <&kp SI_GRAVE>;
+  mods = <(MOD_LSFT|MOD_RSFT)>;
+)
+
+// + and -
+ZMK_MOD_MORPH(si_plus,
+  bindings = <&kp SI_PLUS>, <&kp SI_MINUS>;
+  mods = <(MOD_LSFT|MOD_RSFT)>;
+)

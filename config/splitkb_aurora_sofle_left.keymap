@@ -16,7 +16,7 @@
 #include "behaviors_mod_morph.dtsi"
 #include "keys_si.h"
 
-// bodge wire P1.06 -> P1.07
+// bodge wire P1.06 -> P0.08
 
 &kscan {
     col-gpios
@@ -122,11 +122,11 @@
             *   ,-----------------------------------------.                 ,-----------------------------------------.
             *   |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |                 |  F7  |  F8  |  F9  | F10  | F11  | F12  |
             *   +------+------+------+------+------|------.                 .------+------+------+------+------+------.
-            *   | TAB  |      |   7  |   8  |   9  |      |                 |      | BSPC |  UP  | DEL  |      |      |
+            *   |      |   $  |   7  |   8  |   9  |      |                 |      | BSPC |  UP  | DEL  |      |      |
             *   +------+------+------+------+------|------+                 .------+------+------+------+------+------.
-            *   | SHIFT|      |   4  |   5  |   6  |      |                 | PSCRN| LEFT | DOWN |RIGHT |      |      |
+            *   |      |      |   4  |   5  |   6  |      |                 | PSCRN| LEFT | DOWN |RIGHT |      |      |
             *   +------+------+------+------+------+------+------.   .------+------+------+------+------+------+------.
-            *   | CTRL |   0  |   1  |   2  |   3  |      | MUTE |   |      |      |      |      |      |      |      |
+            *   |      |   0  |   1  |   2  |   3  |      | MUTE |   |      |      |      |      |      |      |      |
             *   `------+------+------+------+------+------+------+   +------+------+------+------+------+------+------'
             *                 | CTRL | ALT  | GUI  |      | SPACE|   | ENTER|      | BSPC  | GUI | RALT |
             *                 `------+------+------+------+------'   '------+------+------+------+------'
@@ -136,11 +136,11 @@
             */
 
             bindings = <
-&kp F1    &kp F2  &kp F3     &kp F4    &kp F5    &kp F6                    &kp F7     &kp F8          &kp F9          &kp F10          &kp F11  &kp F12
-&trans    &none   &kp N7     &kp N8    &kp N9    &none                     &none      &kp BSPC        &kp UP_ARROW    &kp DEL          &none   &none
-&trans    &none   &kp N4     &kp N5    &kp N6    &none                     &kp PSCRN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none   &none
-&trans    &kp N0  &kp N1     &kp N2    &kp N3    &none  &trans     &none   &none      &none           &none           &none            &none   &none
-                  &trans     &trans    &trans    &none  &trans     &trans  &none      &trans          &trans          &trans
+&kp F1    &kp F2        &kp F3     &kp F4    &kp F5    &kp F6                    &kp F7     &kp F8          &kp F9          &kp F10          &kp F11  &kp F12
+&trans    &kp SI_DLLR   &kp N7     &kp N8    &kp N9    &none                     &none      &kp BSPC        &kp UP_ARROW    &kp DEL          &none   &none
+&trans    &none         &kp N4     &kp N5    &kp N6    &none                     &kp PSCRN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none   &none
+&trans    &kp N0        &kp N1     &kp N2    &kp N3    &none  &trans     &none   &none      &none           &none           &none            &none   &none
+                        &trans     &trans    &trans    &none  &trans     &trans  &none      &trans          &trans          &trans
             >;
 
             sensor-bindings =
@@ -153,11 +153,11 @@
             *   ,-----------------------------------------.                 ,-----------------------------------------.
             *   | ESC  |   1  |   2  |   3  |   4  |   5  |                 |  6   |  7   |  8   |  9   |  0   |  ` ~ |
             *   +------+------+------+------+------|------.                 .------+------+------+------+------+------.
-            *   | ESC  |   Š  |   @  | PGUP |      |      |                 |  *   |  |   |  (   |  )   |  !   |  _   |
+            *   |      |   Š  |   @  | PGUP |      |      |                 |  * % |  |   |  (   |  )   |  !   |  _   |
             *   +------+------+------+------+------|------+                 .------+------+------+------+------+------.
-            *   | SHIFT|   Č  | HOME | PGDN | END  |      |                 |  =   |  <   |  [   |  ]   |  >   |  ~   |
+            *   |      |   Č  | HOME | PGDN | END  |      |                 |  =   |  <   |  [   |  ]   |  >   |  ~ # |
             *   +------+------+------+------+------+------+------.   .------+------+------+------+------+------+------.
-            *   |      |   Ž  |      |      |      |      |      |   |      |  %   |  &   |  {   |  }   |  +   |  -   |
+            *   |      |   Ž  |      |      |      |      |      |   |      |  ^ ` |  &   |  {   |  }   |  + - |  $ € |
             *   `------+------+------+------+------+------+------+   +------+------+------+------+------+------+------'
             *                 | CTRL | ALT  | GUI  |      | SPACE|   | ENTER|      | BSPC | GUI  | RALT |
             *                 `------+------+------+------+------'   '------+------+------+------+------'
@@ -165,10 +165,10 @@
 
             bindings = <
 &trans   &trans       &trans      &trans         &trans   &trans                        &trans        &trans       &trans       &trans       &trans       &trans
-&kp ESC  &kp SI_SCAR  &kp SI_AT   &kp PAGE_UP    &none    &none                         &kp SI_ASTRK  &kp SI_PIPE  &kp SI_LPAR  &kp SI_RPAR  &kp SI_EXCL  &kp SI_UNDER
-&trans   &kp SI_CCAR  &kp HOME    &kp PAGE_DOWN  &kp END  &none                         &kp SI_EQUAL  &kp SI_LT    &kp SI_LBKT  &kp SI_RBKT  &kp SI_GT    &kp SI_TILDE
-&none    &kp SI_ZCAR  &none       &none          &none    &none   &kp C_MUTE    &none   &kp SI_PRCNT  &kp SI_AMPS  &kp SI_LBRC  &kp SI_RBRC  &kp SI_PLUS  &kp SI_MINUS
-                     &trans      &trans         &trans   &none   &trans        &trans  &none         &trans       &trans       &trans
+&trans   &kp SI_SCAR  &kp SI_AT   &kp PAGE_UP    &none    &none                         &si_prcnt     &kp SI_PIPE  &kp SI_LPAR  &kp SI_RPAR  &kp SI_EXCL  &kp SI_UNDER
+&trans   &kp SI_CCAR  &kp HOME    &kp PAGE_DOWN  &kp END  &none                         &kp SI_EQUAL  &kp SI_LT    &kp SI_LBKT  &kp SI_RBKT  &Skp SI_GT   &si_tilde
+&trans   &kp SI_ZCAR  &none       &none          &none    &none   &kp C_MUTE    &none   &si_caret     &kp SI_AMPS  &kp SI_LBRC  &kp SI_RBRC  &si_plus     &si_dollar
+                      &trans      &trans         &trans   &none   &trans        &trans  &none         &trans       &trans       &trans
             >;
         };
 
